@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>毛俊的Wiki — 记录于互联网。https://maojun.xyz</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -151,6 +151,8 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/DefaultTiddlers</li>
+
 <li>$:/GitHub/Filename</li>
 
 <li>$:/GitHub/Path</li>
@@ -160,6 +162,10 @@ Error message and password prompt
 <li>$:/GitHub/Username</li>
 
 <li>$:/isEncrypted</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/state/tab--1963855381</li>
 
@@ -190,6 +196,10 @@ Error message and password prompt
 <li>$:/UploadName</li>
 
 <li>$:/view</li>
+
+<li>grafana重置密码</li>
+
+<li>外部CDN库文件引用失效时自动载入本地库文件</li>
 
 </ul>
 </p>
@@ -9406,6 +9416,9 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20200224084603778" modified="20200224084607596" title="$:/DefaultTiddlers">
+<pre>[list[$:/StoryList]]</pre>
+</div>
 <div created="20200223075810073" modified="20200223075811578" title="$:/GitHub/Filename">
 <pre>index.html</pre>
 </div>
@@ -9420,6 +9433,12 @@ Error message and password prompt
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div created="20200224084656062" modified="20200224084823709" title="$:/SiteSubtitle">
+<pre>记录于互联网。https://maojun.xyz</pre>
+</div>
+<div created="20200224084636348" modified="20200224084648646" title="$:/SiteTitle">
+<pre>毛俊的Wiki</pre>
 </div>
 <div created="20200223074202417" modified="20200223074208337" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -9439,10 +9458,10 @@ Error message and password prompt
 <div created="20200223074809449" modified="20200223074812177" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20200223074112909" modified="20200223082318085" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200223074112909" modified="20200224084727933" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20200224064836199" list="GettingStarted" modified="20200224064836199" title="$:/StoryList">
+<div list="外部CDN库文件引用失效时自动载入本地库文件 grafana重置密码 GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9458,7 +9477,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;blob:chrome-extension://iahchcmnlpngnkeibjigneidgeljihkn/7da0c7e6-5c97-4974-a97d-6def228f2d68&quot;
+            &quot;text&quot;: &quot;blob:chrome-extension://iahchcmnlpngnkeibjigneidgeljihkn/06cd69d6-1f65-4dc9-937c-25875ab73be6&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -9478,7 +9497,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;chrome-extension://iahchcmnlpngnkeibjigneidgeljihkn/7da0c7e6-5c97-4974-a97d-6def228f2d68&quot;
+            &quot;text&quot;: &quot;chrome-extension://iahchcmnlpngnkeibjigneidgeljihkn/06cd69d6-1f65-4dc9-937c-25875ab73be6&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9623,6 +9642,47 @@ Error message and password prompt
 </div>
 <div created="20200223074728829" modified="20200223074739815" title="$:/view">
 <pre>classic</pre>
+</div>
+<div created="20200224084352561" modified="20200224084531164" tags="grafana" title="grafana重置密码" type="text/vnd.tiddlywiki">
+<pre>参考：
+https://grafana.com/docs/administration/cli/
+
+This feature is only available in Grafana 4.1 and above.
+这个功能仅在 grafana 4.1 及其以上版本才可以使用。
+
+```bash
+grafana-cli admin reset-admin-password &lt;new password&gt;
+```
+
+&gt; &lt;new password&gt; 为你想重置的新密码
+
+如果没有生效的话，可能需要 reload 一下
+
+```bash
+service grafana-server reload
+```
+</pre>
+</div>
+<div created="20200224100730462" modified="20200224100839691" tags="" title="外部CDN库文件引用失效时自动载入本地库文件">
+<pre>方法一：
+
+```js
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape(&quot;%3Cscript src='/usr/themes/Lingonberry/js/jquery.min.js'%3E%3C/script%3E&quot;));
+    }
+ &lt;/script&gt;
+```
+
+方法二：
+
+```js
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery || document.write(unescape(&quot;%3Cscript src='/usr/themes/Lingonberry/js/jquery.min.js'%3E%3C/script%3E&quot;))&lt;/script&gt;
+```
+
+代码中%3C和%3E分别代表&lt;和&gt;，并通过unescape()函数解码还原。</pre>
 </div>
 
 </div>
