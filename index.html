@@ -533,6 +533,8 @@ Error message and password prompt
 
 <li>hexo问题总结</li>
 
+<li>html的script标签不要自闭合</li>
+
 <li>iptables端口转发配置</li>
 
 <li>java.lang.ClassNotFoundException: org.attoparser.IMarkupParser</li>
@@ -10642,7 +10644,7 @@ Error message and password prompt
 <div created="20200308002508667" creator="m" modified="20200308002602321" modifier="maojun." title="$:/status/UserName">
 <pre>maojun</pre>
 </div>
-<div list="layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 [[Draft of 'New Tiddler 1' by maojun]] java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" title="$:/StoryList">
+<div list="html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 [[Draft of 'New Tiddler 1' by maojun]] java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -16266,6 +16268,18 @@ npm install hexo-tag-echarts3 --save
 fontawesome: //cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
 ```
 </pre>
+</div>
+<div created="20200313000520070" creator="maojun" modified="20200313000716750" modifier="maojun" tags="javascript" title="html的script标签不要自闭合">
+<pre>引用js文件推荐格式：
+
+```js
+&lt;scirpt src=&quot;test.js&quot;&gt;&lt;/script&gt;
+```
+不推荐，会造成`javascript`文件无法引入的问题：
+
+```js
+&lt;scirpt src=&quot;test.js&quot;/&gt;
+```</pre>
 </div>
 <div created="20200304055621258" modified="20200304055635346" tags="iptables" title="iptables端口转发配置">
 <pre># iptables转发端口配置方法
