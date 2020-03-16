@@ -173,6 +173,8 @@ Error message and password prompt
 
 <li>$:/GitHub/Username</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/plugins/tiddlywiki/codemirror</li>
@@ -431,6 +433,8 @@ Error message and password prompt
 
 <li>archlinux问题总结</li>
 
+<li>archlinux降级软件包</li>
+
 <li>Ascill编码</li>
 
 <li>ava实现Base64加解密</li>
@@ -479,8 +483,6 @@ Error message and password prompt
 
 <li>Draft of 'curl'</li>
 
-<li>Draft of 'New Tiddler 1' by maojun</li>
-
 <li>Draft of 'New Tiddler'</li>
 
 <li>dubbo设置zookeepe权限</li>
@@ -492,6 +494,8 @@ Error message and password prompt
 <li>fastfds知识</li>
 
 <li>fastjson知识</li>
+
+<li>fcitx linux版本更新</li>
 
 <li>fcitx使用自然码配置</li>
 
@@ -592,6 +596,8 @@ Error message and password prompt
 <li>kvm</li>
 
 <li>LAMP介绍和安装</li>
+
+<li>layui form阻止自动跳转</li>
 
 <li>layui使用</li>
 
@@ -718,6 +724,8 @@ Error message and password prompt
 <li>ranger简介和使用教程</li>
 
 <li>rdesktop远程Windows桌面</li>
+
+<li>redis查看命中</li>
 
 <li>redis查询key的数量</li>
 
@@ -874,6 +882,8 @@ Error message and password prompt
 <li>建表范围</li>
 
 <li>微信小程序</li>
+
+<li>成员变量用this调用</li>
 
 <li>我常用的Linux软件</li>
 
@@ -10193,6 +10203,17 @@ Error message and password prompt
 <div created="20200223075405515" modified="20200223075407144" title="$:/GitHub/Username">
 <pre>imaojun</pre>
 </div>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;info redis&quot;,
+            &quot;type&quot;: &quot;text/plain&quot;
+        }
+    }
+}</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -10644,7 +10665,7 @@ Error message and password prompt
 <div created="20200308002508667" creator="m" modified="20200308002602321" modifier="maojun." title="$:/status/UserName">
 <pre>maojun</pre>
 </div>
-<div list="html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 [[Draft of 'New Tiddler 1' by maojun]] java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" title="$:/StoryList">
+<div created="20200316122938893" creator="maojun" list="redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" modified="20200316122938893" modifier="maojun" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11464,8 +11485,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200224100944355" modified="20200224140637377" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200224101732428" creator="maojun" modified="20200311111111092" modifier="maojun" title="$:/temp/search">
-<pre>aur</pre>
+<div created="20200224101732428" creator="maojun" modified="20200316123255745" modifier="maojun" title="$:/temp/search">
+<pre>redis</pre>
 </div>
 <div created="20200224101338584" modified="20200224101338584" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -12394,6 +12415,51 @@ firewall-cmd --list-all #列出开放的端口
 - [wmname](http://tools.suckless.org/x/wmname/)
 - [Nvidia-xrun](https://wiki.archlinux.org/index.php/Nvidia-xrun)
 </pre>
+</div>
+<div created="20200315234941500" creator="maojun" modified="20200316001019995" modifier="maojun" tags="archlinux downgrade" title="archlinux降级软件包">
+<pre>!! 手动降级
+
+进入历史pkg包目录：
+
+```bash
+$ cd /var/cache/pacman/pkg/
+```
+
+运行降级软件包命令：
+
+```bash
+$ pacman -U networkmanager-1.0.12-1-x86_64.pkg.tar.xz 
+```
+
+&lt; -U后面跟历史软件包的命令，即要降级到软件的版本。
+
+
+避免升级可以在`/etc/pacman.conf`文件中配置：
+
+```bash
+IgnorePkg   = networkmanager
+```
+
+!! 使用downgrade工具降级：
+
+安装:
+
+```bash
+$ sudo pacman -S --needed downgrade
+```
+配置环境变量增加：
+
+```bash
+export DOWNGRADE_FROM_ALA=1
+```
+
+1表示可以从降级到aur仓库的历史版本，否则只能降级到本地的历史版本
+
+使用降级命令：
+
+```bash
+$ downgrade networkmanager
+```</pre>
 </div>
 <div created="20200225063624229" modified="20200225063731675" tags="ascill" title="Ascill编码">
 <pre>常见字符的ASCII码值如下：空格的ASCII码值为32；数字0到9的ASCII码值分别为48到57；大写字母“A”到“Z”的ASCII码值分别为65到90；小写字母“a”到“z”的ASCII码值分别为97到到122。</pre>
@@ -13870,10 +13936,6 @@ for url in `cat account.txt | sed '/^#/d'`
 https://osa5.189.cn:6102/osa/interface
 </pre>
 </div>
-<div created="20200311110658085" creator="maojun" draft.of="New Tiddler 1" draft.title="New Tiddler 1" modified="20200311110700463" modifier="maojun" tags="" title="Draft of 'New Tiddler 1' by maojun">
-<pre>Cannot load a JDK class: com.sun.jdi.Field
-Please ensure you run the IDE on JDK rather than JRE.</pre>
-</div>
 <div modified="20200302135717488" title="Draft of 'New Tiddler'">
 <pre></pre>
 </div>
@@ -14405,6 +14467,16 @@ http://www.cnblogs.com/goody9807/p/4244862.html
 5 json转成对象
 
 List&lt;ChannelItem&gt; channelItemList  = JSON.parseArray(itemJson,ChannelItem.class);</pre>
+</div>
+<div created="20200316045710000" creator="maojun" modified="20200316055604549" modifier="maojun" tags="fcitx" title="fcitx linux版本更新">
+<pre>进入到小鹤双拼 mac os的rime目录，删除掉mac下的配置文件：
+
+```bash
+$ rm -rf squirrel.*
+```
+
+删除macos下的自定义配置文件`default.custom.yaml'
+</pre>
 </div>
 <div created="20200304061736119" modified="20200304061748469" tags="fcitx" title="fcitx使用自然码配置">
 <pre># fcitx配置使用
@@ -18253,6 +18325,16 @@ http://IP:PORT/
 ```
 根据页面提示配置，`WordPress`就此安装完毕。</pre>
 </div>
+<div created="20200316045024195" creator="maojun" modified="20200316045245778" modifier="maojun" tags="layui" title="layui form阻止自动跳转">
+<pre>在表单函数中使用`return false`来阻止表单自动跳转。如：
+
+```js
+form.on(‘sumbit(add)’,function () {
+   .....
+  return false;
+})
+```</pre>
+</div>
 <div created="20200312141244715" creator="maojun" modified="20200312141442800" modifier="maojun" tags="layui" title="layui使用">
 <pre>layui使用js和css时，需要将整个压缩包里面的内容导入。不能只导入`layui.js`和`layui.css`文件，否则会有依赖问题。
 
@@ -21583,8 +21665,52 @@ rdesktop参数
 -f 进入全屏  (注意，多屏的时候不要用这个否则会铺满所有屏幕)
 </pre>
 </div>
-<div created="20200311092307735" creator="maojun" modified="20200311092353212" modifier="maojun" tags="redis" title="redis查询key的数量">
-<pre>Dbsize:查询节点的key数量（个）</pre>
+<div created="20200316123056049" creator="maojun" modified="20200316123232795" modifier="maojun" tags="redis" title="redis查看命中">
+<pre>验证Redis的缓存是否在工作，可以进入服务器中输入命令redis-cli登入Redis客户端:
+
+```bash
+$ redis-cli
+127.0.0.1:6379&gt; keys *
+1) &quot;43efe54439fbb9c6f647120ec9e02821&quot;
+2) &quot;fcf92f7cb8f50717bba68d1655b4c9a2&quot;
+3) &quot;a8356448e7efd93fdc4c068d4bcb91fb&quot;
+4) &quot;c9db569cb388e160e4b86ca1ddff84d7&quot;
+5) &quot;04ce4f80d6159435fb9b9362fa19442d&quot;
+6) &quot;30da41efe7963d8e81fc37eaf8b656b1&quot;
+7) &quot;45e1dc83b4f004caf1b43bbceccad223&quot;
+8) &quot;271f8547640193f2e8dcaa8bd6cd4be7&quot;
+```
+
+如果输入keys *有输出则说明Redis缓存已经起作用了。可以通过redis-cli的info命令查看缓存命中信息：
+
+```bash
+$ redis-cli
+127.0.0.1:6379&gt; info
+# Stats
+...
+keyspace_hits:26
+keyspace_misses:9
+...
+```
+
+</pre>
+</div>
+<div created="20200311092307735" creator="maojun" modified="20200316134834367" modifier="maojun" tags="redis" title="redis查询key的数量">
+<pre>Dbsize:查询节点的key数量（个）
+
+
+或者使用命令`info`,查看`state`下的信息，或者直接
+
+```
+info Keyspace
+```
+
+得到相关信息
+
+```
+# Keyspace
+db0:keys=101,expires=75,avg_ttl=2591841441
+```</pre>
 </div>
 <div created="20200311064310189" creator="maojun" modified="20200311133358483" modifier="maojun" tags="redis rdb" title="redis根据key前缀统计内存占用">
 <pre>安装redis-rdb-tools工具
@@ -27867,6 +27993,11 @@ WXML提供模板（template），可以在模板中定义代码片段，然后�
 
 WXML 模板和 WXSS 样式工作在渲染层，JS 脚本工作在逻辑层
 </pre>
+</div>
+<div created="20200316064036114" creator="maojun" modified="20200316064234178" modifier="maojun" tags="java" title="成员变量用this调用">
+<pre>如果一个类中的方法调用了成员变量，最好前面加个`this`来区分成员变量和局部变量。
+
+以方便阅读代码。</pre>
 </div>
 <div created="20200302140651186" modified="20200302140714869" tags="linux" title="我常用的Linux软件">
 <pre># 
