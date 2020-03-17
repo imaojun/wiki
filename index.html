@@ -457,6 +457,8 @@ Error message and password prompt
 
 <li>centos 问题集</li>
 
+<li>Centos安装7z解压缩</li>
+
 <li>Centos安装Dubbo和控制台</li>
 
 <li>Centos安装常用软件</li>
@@ -551,6 +553,10 @@ Error message and password prompt
 
 <li>java开发工具</li>
 
+<li>java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;</li>
+
+<li>java报错Jedis does not support password protected Redis Cluster configurations</li>
+
 <li>Java接口</li>
 
 <li>java模拟堆内存溢出</li>
@@ -570,6 +576,8 @@ Error message and password prompt
 <li>java问题总结</li>
 
 <li>java面试题目</li>
+
+<li>jedis设置密码连接访问</li>
 
 <li>jenkins配置邮件</li>
 
@@ -699,6 +707,10 @@ Error message and password prompt
 
 <li>oracle查询</li>
 
+<li>oracle查询包含中文内容的字段</li>
+
+<li>oracle根据用户的姓或首字母脱敏</li>
+
 <li>oracle知识</li>
 
 <li>pacman下载超时</li>
@@ -725,6 +737,8 @@ Error message and password prompt
 
 <li>rdesktop远程Windows桌面</li>
 
+<li>redis查看key中文乱码</li>
+
 <li>redis查看命中</li>
 
 <li>redis查询key的数量</li>
@@ -738,6 +752,8 @@ Error message and password prompt
 <li>redis集群下keys命令查询某一类业务相关的key</li>
 
 <li>rime命令</li>
+
+<li>rsync参数说明</li>
 
 <li>rsync同步</li>
 
@@ -10665,7 +10681,7 @@ Error message and password prompt
 <div created="20200308002508667" creator="m" modified="20200308002602321" modifier="maojun." title="$:/status/UserName">
 <pre>maojun</pre>
 </div>
-<div created="20200316122938893" creator="maojun" list="redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" modified="20200316122938893" modifier="maojun" title="$:/StoryList">
+<div created="20200317070407390" creator="maojun" list="oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" modified="20200317070407390" modifier="maojun" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11485,8 +11501,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200224100944355" modified="20200224140637377" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200224101732428" creator="maojun" modified="20200316123255745" modifier="maojun" title="$:/temp/search">
-<pre>redis</pre>
+<div created="20200224101732428" creator="maojun" modified="20200317070405813" modifier="maojun" title="$:/temp/search">
+<pre>rsync</pre>
 </div>
 <div created="20200224101338584" modified="20200224101338584" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -13081,6 +13097,16 @@ systemctl restart dbus解决
 [root@localhost system]# systemctl restart firewalld
 [root@localhost system]# systemctl status firewalld
 
+</pre>
+</div>
+<div created="20200317014950322" creator="maojun" modified="20200317015133882" modifier="maojun" tags="centos 7z" title="Centos安装7z解压缩">
+<pre>Centos安装万能解压缩工具7z
+
+```bash
+$ yum -y install p7zip p7zip-plugins
+```
+
+注意，上面两个包都要安装前者支持7za命令，后者支持7z命令
 </pre>
 </div>
 <div created="20200302133435922" modified="20200302133453038" tags="dubbo centos" title="Centos安装Dubbo和控制台">
@@ -17050,6 +17076,72 @@ Alibaba Dragonwell 是阿里巴巴内部OpenJDK定制版AJDK的开源版本， A
 
 获取方式：（开源）https://github.com/alibaba/dragonwell8</pre>
 </div>
+<div created="20200317024850090" creator="maojun" modified="20200317030331213" modifier="maojun" tags="java redis" title="java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;">
+<pre>将redis4.xx升级到5.xx，重启服务时控制台出现以下错误：
+
+```log
+java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;
+```
+
+解决：将`redis.clients`的版本升级为`2.9.0`及以上。
+
+```xml
+ &lt;dependency&gt;
+     &lt;groupId&gt;redis.clients&lt;/groupId&gt;
+      &lt;artifactId&gt;jedis&lt;/artifactId&gt;
+      &lt;version&gt;2.9.0&lt;/version&gt;
+  &lt;/dependency&gt;
+```
+
+
+升级后的版本`JedisCluster`的`close()`方法需要捕获异常 不然编译报错，之前的老版本是正常通过的。</pre>
+</div>
+<div created="20200317025610667" creator="maojun" modified="20200317030002055" modifier="maojun" tags="java redis" title="java报错Jedis does not support password protected Redis Cluster configurations">
+<pre>将原先没有密码的redis连接设置为有密码的redis联接，重新启动后发现控制台报错：
+
+```log
+Jedis does not support password protected Redis Cluster configurations
+```
+
+解决:spring-data-redis操作redis集群报“Jedis does not support password protected Redis Cluster configurations”的异常
+升级
+
+升级spring-data-redis到`1.8.0.RELEASE`及以上版本即可解决。
+
+```xml
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-data-redis&lt;/artifactId&gt;
+            &lt;version&gt;1.8.0.RELEASE&lt;/version&gt;
+            &lt;exclusions&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+                &lt;exclusion&gt;
+                    &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+                    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;/exclusion&gt;
+            &lt;/exclusions&gt;
+        &lt;/dependency&gt;
+```</pre>
+</div>
 <div created="20200302130806411" modified="20200302130828440" tags="java interface" title="Java接口">
 <pre>Java interface中声明的字段在编译时会自动加上static final修饰符，即声明为常量。故接口是存放常量的最佳地点。
 问题，接口A和类B，类B调用接口A的普通字符。A普通字符String name修改后,重新编译接口A。类B调用依然是老字符。
@@ -17637,6 +17729,16 @@ public class TTTT {
   
     }  
 }</pre>
+</div>
+<div created="20200317030037765" creator="maojun" modified="20200317030203880" modifier="maojun" tags="java redis" title="jedis设置密码连接访问">
+<pre>通过`jedisConnectionFactory`的`setPassword`方法设置密码。
+
+```java
+   // ConnectionFactory
+        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(redisClusterConfiguration, jedisPoolConfig);
+        jedisConnectionFactory.setUsePool(true);
+        jedisConnectionFactory.setPassword(env.getProperty(&quot;redis.password&quot;));
+```</pre>
 </div>
 <div created="20200302133819331" modified="20200302133839888" tags="jenkins" title="jenkins配置邮件">
 <pre>## 手动配置的方式
@@ -20846,6 +20948,38 @@ select t.id,
 使用decode函数，可以将不同的查询结果显示不同的值。比如`0`表示男生，`1`表示女生，在数据库查询显示的时候可以用decode函数显示真实的值。
 上述`sql`中，将结果是`0`的显示为男生，`1`显示女生，不是`0`和`1`的显示为其他。</pre>
 </div>
+<div created="20200317092559219" creator="maojun" modified="20200317092711614" modifier="maojun" tags="oracle" title="oracle查询包含中文内容的字段">
+<pre>
+```sql
+SELECT NAME_ONE FROM TEST WHERE ASCIISTR(NAME_ONE) LIKE '%\%' 
+```</pre>
+</div>
+<div created="20200317085449526" creator="maojun" modified="20200317094216512" modifier="maojun" tags="oracle desensitization" title="oracle根据用户的姓或首字母脱敏">
+<pre>业务上的需求，需要脱敏显示用户的名字。如果用户长度是2，则脱敏最后一位，如果用户长度是3位，则脱敏最后2位，以此类推。
+
+```sql
+select substr(rpad(substr(ACCOUNT_COMMENT,1,1),length(ACCOUNT_COMMENT)*2,'*') ,1,length(ACCOUNT_COMMENT))   from   QP_ACCOUNT_TB;
+```
+
+substr(ACCOUNT_COMMENT,1,1)，只保留中文的姓和英文的首字母。
+
+length(ACCOUNT_COMMENT)*2， length中英文都是1个长度，但是一个中文占用2个rpad()方法的长度。所以''*2''保证中文不丢失（否则最后的*号会缺少）
+
+rpad(substr(ACCOUNT_COMMENT,1,1),length(ACCOUNT_COMMENT)*2,'*')。，保留首字母和中文的姓，后面的用2倍长度的*替换（同上，保证中文不丢失）
+
+后面再次substr()，让中文保留姓英文保留首字母。
+
+注意：substr()方法中文占用2个长度，length()方法中文占用一个长度。
+
+
+
+如果是更新修改可以使用下面这条sql
+
+```sql
+update 用户 set 姓名 = substr(rpad(substr(姓名,1,1),length(姓名)*2,'*'),1,length(姓名)) 
+where 姓名 is not null;
+```</pre>
+</div>
 <div created="20200302134123974" modified="20200302134144846" tags="oracle" title="oracle知识">
 <pre>## ronum
    Oracle 的 rownum 问题，很多资料都说不支持SQL语句中的“&gt;、&gt;=、=、between...and”运算符，只能用如下运算符号“&lt;、&lt;=、!=”，
@@ -21665,6 +21799,22 @@ rdesktop参数
 -f 进入全屏  (注意，多屏的时候不要用这个否则会铺满所有屏幕)
 </pre>
 </div>
+<div created="20200317025212270" creator="maojun" modified="20200317025607177" modifier="maojun" tags="redis redis-cli" title="redis查看key中文乱码">
+<pre>redis查看key的值时，如果存在中文显示的是UTF-8编码后的字符串,看上去就是一堆乱码。
+
+解决：连接redis-cli的时候，在末尾添加`--raw`属性
+
+```bash
+redis-cli -h xxx.xxx.xxx.xxx -p xx -c --raw
+```
+
+-c 表示连接redis集群
+
+--raw
+
+按数据原有格式打印数据，不展示额外的类型信息
+显示中文,也就是将UTF-8字符串解码为中文</pre>
+</div>
 <div created="20200316123056049" creator="maojun" modified="20200316123232795" modifier="maojun" tags="redis" title="redis查看命中">
 <pre>验证Redis的缓存是否在工作，可以进入服务器中输入命令redis-cli登入Redis客户端:
 
@@ -22244,6 +22394,19 @@ yay  librime
 **rime.fcitx-rime.INFO**
 **rime.fcitx-rime.WARNING**
 三个日志文件</pre>
+</div>
+<div created="20200317070413714" creator="maojun" modified="20200317070426711" modifier="maojun" tags="rsync" title="rsync参数说明">
+<pre>参数 v 表示详细提示
+
+z 表示压缩
+
+u 表示只进行更新
+
+topg 保持文件原有属性如属主、时间的参数
+
+--progress 指显示
+
+--delete 指如果服务器端删除了这一文件，那么客户端也相应把文件删除，保持真正的一致</pre>
 </div>
 <div created="20200304055917760" modified="20200304055941929" tags="rsync" title="rsync同步">
 <pre># rsync同步
