@@ -487,6 +487,8 @@ Error message and password prompt
 
 <li>Draft of 'New Tiddler'</li>
 
+<li>Draft of 'web开发安全问题' by maojun</li>
+
 <li>dubbo设置zookeepe权限</li>
 
 <li>dunst</li>
@@ -862,6 +864,8 @@ Error message and password prompt
 <li>zookeeper问题总结</li>
 
 <li>zsh目录技巧</li>
+
+<li>不安全的http方法解决办法</li>
 
 <li>不要使用存储过程</li>
 
@@ -10681,7 +10685,7 @@ Error message and password prompt
 <div created="20200308002508667" creator="m" modified="20200308002602321" modifier="maojun." title="$:/status/UserName">
 <pre>maojun</pre>
 </div>
-<div created="20200318133744920" creator="maojun" list="springboot流程总结 oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" modified="20200318133744920" modifier="maojun" title="$:/StoryList">
+<div list="bluetoothctl命令行连接airpods 不安全的http方法解决办法 [[Draft of 'web开发安全问题' by maojun]] springboot流程总结 oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11501,8 +11505,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200224100944355" modified="20200224140637377" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200224101732428" creator="maojun" modified="20200318133743058" modifier="maojun" title="$:/temp/search">
-<pre>thym</pre>
+<div created="20200224101732428" creator="maojun" modified="20200320082517528" modifier="maojun" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200224101338584" modified="20200224101338584" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -12864,7 +12868,7 @@ lsmod | grep bbr
 
 </pre>
 </div>
-<div created="20200304062300568" modified="20200304062336697" tags="linux bluetoothctl airpods" title="bluetoothctl命令行连接airpods">
+<div created="20200304062300568" creator="maojun" modified="20200320082525207" modifier="maojun" tags="linux bluetoothctl airpods" title="bluetoothctl命令行连接airpods">
 <pre>bluetoothct依赖下面的包
 ```sh
 $ sudo pacman -S bluez bluez-utils pulseaudio-bluetooth  
@@ -13964,6 +13968,234 @@ https://osa5.189.cn:6102/osa/interface
 </div>
 <div modified="20200302135717488" title="Draft of 'New Tiddler'">
 <pre></pre>
+</div>
+<div created="20200225063015335" creator="maojun" draft.of="web开发安全问题" draft.title="web开发安全问题" modified="20200319024438946" modifier="maojun" tags="security" title="Draft of 'web开发安全问题' by maojun">
+<pre># Nginx等中间件安全排查及问题修复过程
+以下内容是公司净网行动期间开展的安全排查和问题修复过程。
+
+## 禁止使用系统管理员账号权限运行Web中间件
+使用下面的命令查看进程并判断哪些服务是用`Root`权限运行的，如果是用Root权限运行的需要修改成相应的普通权限。避免给予过高的权限造成安全隐患。
+```sh
+$ top -U root
+```
+
+## 禁止Web中间件访问Web目录之外的任何文件。
+- Apache服务
+如果使用了`Apache`则需要编辑`httpd.conf`配置文件:
+```xml
+&lt;Directory /&gt;
+
+Order Deny,Allow
+
+Deny from all
+
+&lt;/Directory&gt;
+```
+
+## 禁止目录列出
+- Nginx
+Nginx关闭目录索引，`autoindex`设置为`off`或者删除该配置（默认为`off`)
+```conf
+#autoindex on;   
+```
+
+## 自定义错误页面，不能包含中间件版本，错误内容信息
+- Nginx配置隐藏版本
+  - 配置文件里增加`server_tokens off;`
+作用域是`http`,`server`,`location`语句块
+&gt; 这种只会去除html页面信息版本信息，其他软件自身探针依旧可以检测到版本，可以使用修改源码彻底隐藏版本
+
+- Nginx修改源码编译隐藏
+1. 修改src/core/nginx.h（Nginx内部名称的）
+```conf
+#define NGINX_VERSION      &quot;1.12.0&quot;
+#define NGINX_VER          &quot;nginx/&quot; NGINX_VERSION
+```
+去掉版本号并把nginx修改成大写（可以任意）
+```
+#define NGINX_VERSION      &quot;&quot;
+#define NGINX_VER          &quot;NGINX/&quot; NGINX_VERSION
+```
+2. 修改src/http/ngx_http_header_filter_module.c（HTTP ResponseHeader）
+
+```conf
+static char ngx_http_server_string[] = &quot;Server: nginx&quot; CRLF;
+```
+
+```conf
+static char ngx_http_server_string[] = &quot;Server: NGINX&quot; CRLF;
+```
+
+3. 修改src/http/ngx_http_special_response.c（修改错误页的底部Footer）
+
+static u_char ngx_http_error_tail[] = 下的nginx信息（可以任意）
+```
+static u_char ngx_http_error_tail[] =
+&quot;&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;&quot; CRLF
+&quot;&lt;/body&gt;&quot; CRLF
+&quot;&lt;/html&gt;&quot; CRLF
+;
+```
+同样改成大写（可以任意）
+```
+static u_char ngx_http_error_tail[] =
+&quot;&lt;hr&gt;&lt;center&gt;NGINX&lt;/center&gt;&quot; CRLF
+&quot;&lt;/body&gt;&quot; CRLF
+&quot;&lt;/html&gt;&quot; CRLF
+;
+```
+&gt; 添加 server_tokens off; 参数的时候，调用的是 src/http/ngx_http_header_filter_module.c 里的值
+不添加的时候，显示版本号调用的是 src/core/nginx.h 里的值
+- 修改错误信息
+1. fastcgi_intercept_errors 配置方式
+这是做正向代理的配置:
+
+```conf
+# 定义错误页面码，如果出现相应的错误页面码，转发到那里。
+fastcgi_intercept_errors on;
+error_page  404 403 500 502 503 504  /404.html;
+
+# 承接上面的location。
+
+location = /404.html {
+
+# 放错误页面的目录路径。
+
+root   /usr/share/nginx/html;
+
+}
+```
+2. proxy_intercept_errors配置方式
+适合反向代理的配置：
+
+```conf
+proxy_intercept_errors on;
+error_page    404  /404.html;
+
+location = /404.html {
+
+root   /usr/share/nginx/html;
+
+}
+```
+## 根据业务需要，合理设置Session时间，防止拒绝服务攻击
+
+- Tomcat
+
+```xml
+修改配置文件server.xml，设置connectiontimeout值，默认为20000ms，修改为8000ms；
+```
+- 数据库连接池
+
+```xml
+ &lt; Context path=&quot;/eis_zsgl&quot; docBase=&quot;eis_zsgl&quot; defaultSessionTimeOut=&quot;3600&quot; 
+
+debug=&quot;5&quot; reloadable=&quot;true&quot; crossContext=&quot;true&quot;&gt;
+
+  &lt; Resource name=&quot;jdbc/eis_zsgl&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot; 
+
+maxActive=&quot;100&quot; maxIdle=&quot;30&quot; maxWait=&quot;10000&quot; 
+
+username=&quot;sa&quot; password=&quot;eisunion&quot; 
+
+driverClassName=&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot; 
+
+url=&quot;jdbc:sqlserver://127.0.0.1:1433;databasename=mytest&quot; 
+
+validationQuery=&quot;select 1&quot; /&gt; 
+
+&lt; /Context&gt;
+```
+&gt; defaultSessionTimeOut：设置会话时间 单位为秒
+maxActive ： 连接池的最大数据库连接数。设为0表示无限制。
+maxIdle ：可以同时闲置在连接池中的连接的最大数 
+maxWait ： 最大超时时间，以毫秒计
+
+- 在cookie里设置httponly参数
+配置`Tomcat`中的`web.xml`文件:
+
+```xml
+&lt; session-config&gt;
+        &lt;  cookie-config&gt;
+        &lt;  session-timeout&gt;30&lt; session-timeout&gt;
+           &lt; secure&gt;true&lt; secure&gt;
+           &lt; http-only&gt;true&lt; http-only&gt;
+        &lt; /cookie-config&gt;
+&lt; /session-config&gt;
+```
+
+在代码中配置，比如在`Java`中配置：
+```java
+response.setHeader(&quot;SET-COOKIE&quot;, &quot;JSESSIONID=&quot; + sessionid + &quot;; secure ; HttpOnly&quot;);
+```
+
+## 禁用PUT，DELETE等不安全的http方法
+- springmvc
+代码中指定requestMapping的http方法,或者使用getMapping接postMapping格式
+
+- Nginx
+在你要屏蔽的虚拟主机的server段里加入下面代码：
+```conf
+if ($request_method !~* GET|POST) {
+            return 403;
+        }
+```
+重启nginx，这样就屏蔽GET、POST、之外的HTTP方法
+
+- Tomcat
+web.xml(url下禁用的请求方式)
+```xml
+&lt;security-constraint&gt;
+&lt;web-resource-collection&gt;
+&lt;web-resource-name&gt;forbid&lt;/web-resource-name&gt;
+&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;http-method&gt;PUT&lt;/http-method&gt;
+&lt;http-method&gt;DELETE&lt;/http-method&gt;
+&lt;http-method&gt;HEAD&lt;/http-method&gt;
+&lt;http-method&gt;OPTIONS&lt;/http-method&gt;
+&lt;http-method&gt;TRACE&lt;/http-method&gt;
+&lt;/web-resource-collection&gt;
+&lt;auth-constraint&gt;&lt;/auth-constraint&gt;
+&lt;/security-constraint&gt;
+&lt;login-config&gt;
+&lt;auth-method&gt;BASIC&lt;/auth-method&gt;
+&lt;/login-config&gt;
+```
+
+
+tomcat全局自定义错误页面
+
+```xml
+
+&lt;error-page&gt;
+&lt;error-code&gt;403&lt;/error-code&gt;
+ &lt;location&gt;/error.html&lt;/location&gt;
+ &lt;/error-page&gt; 
+ &lt;error-page&gt; 
+ &lt;error-code&gt;404&lt;/error-code&gt; 
+ &lt;location&gt;/error.html&lt;/location&gt;
+ &lt;/error-page&gt; 
+ &lt;error-page&gt;
+ &lt;error-code&gt;500&lt;/error-code&gt; 
+ &lt;location&gt;/error.html&lt;/location&gt; 
+ &lt;/error-page&gt;
+```
+
+## 根据机器和业务需求，设置最大最小连接数
+连接池中配置
+```xml
+#&lt;!-- 初始化连接 --&gt;
+initialSize=10
+#最大连接数量
+maxActive=5000
+#&lt;!-- 最大空闲连接 --&gt;
+maxIdle=50
+#&lt;!-- 最小空闲连接 --&gt;
+minIdle=5
+#&lt;!-- 超时等待时间以毫秒为单位 30000毫秒/1000等于30秒 --&gt;
+maxWait=30000
+```
+</pre>
 </div>
 <div created="20200302125839429" modified="20200302125855301" tags="dubbo" title="dubbo设置zookeepe权限">
 <pre># dubbo设置连接zookeeper权限
@@ -27189,6 +27421,100 @@ pushd &lt;dir&gt;; cd foo; cd bar; ....; cd ../baz; ....; popd situation,
 
 zsh keeps the full stack, so you can do cd -0 (takes you to the previous) or cd -1 (the one before the previous) etc. If you don't remember, do a cd -&lt;tab&gt; for a full list.
 ```
+</pre>
+</div>
+<div created="20200319042443561" creator="maojun" modified="20200319043114693" modifier="maojun" tags="" title="不安全的http方法解决办法">
+<pre>除标准的`GET`和`POST`方法外，`HTTP`请求还使用其他各种方法。许多这类方法主要用于完成不常见或特殊的任务。如果低权限用户可以访问这些方法，他们就能够以此向应用程序实施有效攻击。
+
+以下是一些值得注意的方法：
+
+方法  |	说明
+----  | --------------
+PUT	| 向指定的目录上载文件
+DELETE	| 删除指定的资源
+COPY	| 将指定的资源复制到Destination消息头指定的位置
+MOVE	| 将指定的资源移动到Destination消息头指定的位置
+SEARCH   |	在一个目录路径中搜索资源
+PROPFIND   |	获取与指定资源有关的信息，如作者、大小与内容类型
+TRACE	|  在响应中返回服务器收到的原始请求
+
+
+其中，`SEARCH`、`PROPFIND`等方法属于`HTTP`协议的`WebDAV`（Web-based Distributed Authoring and Versioning）扩展。
+
+查看链接支持访问的`HTTP`方法：
+
+使用`CURL`命令发送`OPTIONS`请求，查看响应头中的`Allow`行,格式：
+
+```bash
+$ curl -I -X OPTIONS https:maojun.xyz
+```
+测试完整例子：
+```bash
+curl -I -X OPTIONS https://maojun.xyz
+HTTP/1.1 200 
+Set-Cookie: JSESSIONID=9C07035B354949CAA5A84CF0102E6C9A; Path=/manager; HttpOnly
+Allow: GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS
+Content-Length: 0
+Date: Thu, 19 Mar 2020 02:19:49 GMT
+```
+
+&gt; 返回的`Allow`信息为即为该链接支持的`HTTP`请求方法
+
+可以看到链接暴露了` GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS`等方法，这些`HTTP`请求方法并非所有都在项目中应用到，存在安全隐患。
+
+&gt; 注意:只开放需要的`HTTP`请求方法即可。如果是`restful`风格可以按需要关闭不必要的请求方法
+
+
+## 解决方法
+
+- Apache
+
+修改应用配置文件`httpd.conf`，加入如下配置项：
+
+```conf
+TraceEnable Off
+```
+
+- Nginx
+在你要屏蔽的虚拟主机的server段里加入下面代码：
+```conf
+if ($request_method !~* GET|POST) {
+            return 403;
+        }
+```
+重启nginx，这样就屏蔽`GET`、`POST`、之外的`HTTP`方法
+
+- SpringMVC
+
+`Controlelr`代码中指定`requestMapping`的`http`方法,或者使用`getMapping`接`postMapping`格式
+
+- Tomcat
+编辑`Tomcat`下的`web.xml`(全局应用`Tomcat`下的所有应用）
+或者编辑项目中的`web.xml`（只对当前项目生效），添加如下内容：
+
+```xml
+&lt;security-constraint&gt;
+&lt;web-resource-collection&gt;
+&lt;web-resource-name&gt;forbid&lt;/web-resource-name&gt;
+&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;http-method&gt;PUT&lt;/http-method&gt;
+&lt;http-method&gt;DELETE&lt;/http-method&gt;
+&lt;http-method&gt;HEAD&lt;/http-method&gt;
+&lt;http-method&gt;OPTIONS&lt;/http-method&gt;
+&lt;http-method&gt;TRACE&lt;/http-method&gt;
+&lt;/web-resource-collection&gt;
+&lt;auth-constraint&gt;&lt;/auth-constraint&gt;
+&lt;/security-constraint&gt;
+&lt;login-config&gt;
+&lt;auth-method&gt;BASIC&lt;/auth-method&gt;
+&lt;/login-config&gt;
+```
+
+&gt; 注意：最好将上面配置放在`web.xml`的末尾位置。
+
+重启 tomcat 即可完成。 以上的代码添加到某一个应用中，也可以添加到`tomcat`对应`conf`目录的`web.xml`中，区别是添加到某一个应用只对某一个应用有效，如 果添加到`tomcat`的`conf`目录下`web.xml`中，则对`tomcat`下所有的应用有效。
+
+（完）
 </pre>
 </div>
 <div created="20200302133847196" modified="20200302133859697" tags="" title="不要使用存储过程">
