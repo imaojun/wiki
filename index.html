@@ -441,6 +441,8 @@ Error message and password prompt
 
 <li>awk</li>
 
+<li>Bash下的emacs快捷键</li>
+
 <li>Bash历史记录的快捷操作方式</li>
 
 <li>bash配置</li>
@@ -480,10 +482,6 @@ Error message and password prompt
 <li>curl</li>
 
 <li>docker搭建看板</li>
-
-<li>Draft 2 of 'New Tiddler'</li>
-
-<li>Draft of 'curl'</li>
 
 <li>Draft of 'New Tiddler 1' by maojun</li>
 
@@ -799,8 +797,6 @@ Error message and password prompt
 
 <li>TCP协议</li>
 
-<li>Terminal使用技巧</li>
-
 <li>Tmux</li>
 
 <li>Tmux快捷键</li>
@@ -894,6 +890,8 @@ Error message and password prompt
 <li>备忘</li>
 
 <li>外部CDN库文件引用失效时自动载入本地库文件</li>
+
+<li>容器</li>
 
 <li>对java的看法</li>
 
@@ -10685,7 +10683,7 @@ Error message and password prompt
 <div created="20200308002508667" creator="m" modified="20200308002602321" modifier="maojun." title="$:/status/UserName">
 <pre>maojun</pre>
 </div>
-<div created="20200322033926410" creator="maojun" list="[[Draft of 'New Tiddler 1' by maojun]] web开发安全问题 bluetoothctl命令行连接airpods 不安全的http方法解决办法 springboot流程总结 oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" modified="20200322033926410" modifier="maojun" title="$:/StoryList">
+<div created="20200323011141203" creator="maojun" list="容器 curl Bash下的emacs快捷键 bash配置 Bash历史记录的快捷操作方式 [[Draft of 'New Tiddler 1' by maojun]] web开发安全问题 bluetoothctl命令行连接airpods 不安全的http方法解决办法 springboot流程总结 oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" modified="20200323012731068" modifier="maojun" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11505,8 +11503,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200224100944355" modified="20200224140637377" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200224101732428" creator="maojun" modified="20200322033922037" modifier="maojun" title="$:/temp/search">
-<pre>版本号</pre>
+<div created="20200224101732428" creator="maojun" modified="20200323011153947" modifier="maojun" title="$:/temp/search">
+<pre>启动编辑器</pre>
 </div>
 <div created="20200224101338584" modified="20200224101338584" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -12689,6 +12687,71 @@ rofi -show drun  -run-shell-command 'termite -e {cmd}; read -n 1 -s'
 
 
 
+
+</pre>
+</div>
+<div created="20200302141201369" creator="maojun" modified="20200323012718855" modifier="maojun" tags="terminal bash emacs" title="Bash下的emacs快捷键">
+<pre># Terminal终端命令
+大多数的终端都是使用Bash和emace快捷键。
+默认的`Ｂash`是用的`Emacs`的快件键，我之前都是修改成Vi(`set - o vi`)的操作方式。
+但是看到这么丰富的快捷键后,用默认的`Bash`快捷键方式来操作命令行也很愉快了。
+
+## 启动编辑器
+`Ctrl+x-Ctrl+x`打开一个编辑器
+&gt; 根据 $FCEDIT 或 $EDITOR 环境变量打开对应的编辑器,若这两个变量都为空，则运行emacs
+
+## 控制屏幕
+- `Ctrl+l`清屏（同`clear`命令）
+- `Ctrl+s`暂停屏幕输出
+- `Ctrl+q`恢复`Ctrl+s`后的屏幕输出
+
+## 命令行光标
+- `Ctrl+A`/`Home`移动光标到行首
+- `Ctrl+E`/`End`移动光标到行尾
+- `Ctrl+B`/`左箭头&lt;-`向左移动一个字符
+- `Ctrl+F`/`右箭头-&gt;`向右移动一个字符
+- `Ctrl+左箭头&lt;-`/`Alt+b`/`ESC-b`向左移动一个单词（以空格分隔)
+- `Ctrl+右箭头-&gt;`/`Alt+c`/`ESC-f`向右移动一个单词（以空格分隔)
+&gt; `Alt+c`向右移动一个单词时会将单词首字母变大写
+
+## 搜索历史
+- `上箭头`/`下箭头`上箭头搜索上一条历史，下箭头相反
+- `Ctrl+p`/`Ctp+n`同上下箭头
+- `Ctrl+r`搜索匹配的历史关键字
+- `Ctrl+s`反向搜索
+- `Ctrl+g`取消反向搜索
+
+## 命令行删除文本
+- `Ctrl+d`/`Delete` 删除光标所在的字符
+- `Ctrl+k` 删除光标到行尾的的文本
+- `Ctrl+x-Backspace` 删除光标到行首的文本
+
+## 命令行修改文本
+- `Ctrl+t` 光标处字符和前一个字符交换位置
+- `ESC+t`与光标前一各单词交换位置（以空格分隔）
+- `ESC+u` 将光标所在处单词字符到词尾转大写
+- `ESC+l` 将光标所在单词字符到词尾写
+- `Esc+c` 将光标所在单词字符转大写，单词光标后字符到词尾转小写
+
+## 控制进程
+- `Ctrl+z` 挂起当前进程
+- `Ctrl+c` 结束当前进程
+- `Ctrl+d` 退出Bash（同`exit`命令）
+
+## Bang(!)命令
+- `!!` 执行上一条命令
+- `!top` 执行最近以top开头的命令
+- `!top:p` 只显示但不执行最近以top开头的命令
+- `!$` 将上个命令中最后一个单词作为新命令执行（同`Alt+.`但要回车执行)
+- `!$:p` 显示`!$`要执行的命令
+- `!*` 执行上个命令中首单词除外的命令
+- `!*:p` 显示`!*`要执行的命令
+
+## 更多命令
+查看帮助手册
+```sh
+$ man bash
+```
 
 </pre>
 </div>
@@ -13909,7 +13972,7 @@ $ crontab -r
 
 </pre>
 </div>
-<div created="20200302141329842" modified="20200302141339346" tags="curl" title="curl">
+<div created="20200302141329842" creator="maojun" modified="20200323012733994" modifier="maojun" tags="curl" title="curl">
 <pre># curl接口调试
 
 ```sh
@@ -13940,31 +14003,6 @@ docker run -d --restart=always --name wekan --link &quot;wekan-db:db&quot; -e &q
 ```
 
 Now Wekan is available at http://ip-address:port , for examp</pre>
-</div>
-<div created="20200302140650875" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200302140650875" tags="" title="Draft 2 of 'New Tiddler'">
-<pre></pre>
-</div>
-<div created="20200302141329842" draft.of="curl" draft.title="curl" modified="20200302141350989" tags="curl" title="Draft of 'curl'">
-<pre># curl接口调试
-
-```sh
-#!/bin/sh
-for url in `cat account.txt | sed '/^#/d'`
-     do
-         echo $url
-         curl -i -k  -H &quot;Content-type: application/json&quot; -X POST -d '{&quot;roleModelList&quot;:[{&quot;platNo&quot;:&quot;93519&quot;,&quot;userPhone&quot;:&quot;'&quot;$url&quot;'&quot;,&quot;userRole&quot;:&quot;2&quot;}]}' http://10.128.112.88:9596/realnamemg/role
-         sleep 1
-    done
-```
-&gt; 注意:curl传参要留意
-
-
-
-下面是测试内容
-
-  curl -i -k  -H &quot;Content-type: application/json&quot; -X POST -d '{&quot;head&quot;:{&quot;sysCode&quot;: &quot;S10840&quot;,&quot;appCode&quot;: &quot;A01017&quot;,&quot;transactionId&quot;: &quot;S10840A01017190905095578448e2b579641f091e26196120ce9f9&quot;,&quot;reqTime&quot;: &quot;2019-09-05 09:55:16&quot;,&quot;method&quot;: &quot;CTEC-01017.3.30&quot;,&quot;version&quot;: 1,&quot;attach&quot;: &quot;hello,189.cn&quot;,&quot;sign&quot;: &quot;1da95facceffcf74d67acd7c109bbda0&quot;},&quot;biz&quot;:{&quot;orderId&quot;: &quot;83919090550201479094&quot;,&quot;phoneNumber&quot;: &quot;17375019934&quot;,&quot;custName&quot;: &quot;陈志&quot;,&quot;idCardNo&quot;: &quot;34240120010306765X&quot;,&quot;contactNumber&quot;: &quot;13965042529&quot;,&quot;custAffress&quot;: &quot;&quot;,&quot;ifOneself&quot;: &quot;0&quot;,&quot;sendCusname&quot;: &quot;陈志&quot;,&quot;v4Flag&quot;: &quot;703&quot;,&quot;sendCusmobile&quot;: &quot;13965042529&quot;,&quot;sendAddress&quot;: &quot;&quot;,&quot;provinceCode&quot;:&quot;002024&quot;,&quot;cityCode&quot;:&quot;002024001&quot;,&quot;countyCode&quot;:&quot;002024001003&quot;}}'
-https://osa5.189.cn:6102/osa/interface
-</pre>
 </div>
 <div created="20200322085710840" creator="maojun" draft.of="New Tiddler 1" draft.title="servlet" modified="20200322085743702" modifier="maojun" tags="servlet" title="Draft of 'New Tiddler 1' by maojun">
 <pre>servlet是server applet的缩写。</pre>
@@ -24317,71 +24355,6 @@ TCP使用差错控制来提供可靠性。差错控制包括以下的一些机�
 
 </pre>
 </div>
-<div created="20200302141201369" modified="20200302141216951" tags="terminal" title="Terminal使用技巧">
-<pre># Terminal终端命令
-大多数的终端都是使用Bash和emace快捷键。
-默认的`Ｂash`是用的`Emacs`的快件键，我之前都是修改成Vi(`set - o vi`)的操作方式。
-但是看到这么丰富的快捷键后,用默认的`Bash`快捷键方式来操作命令行也很愉快了。
-
-## 启动编辑器
-`Ctrl+x-Ctrl+x`打开一个编辑器
-&gt; 根据 $FCEDIT 或 $EDITOR 环境变量打开对应的编辑器,若这两个变量都为空，则运行emacs
-
-## 控制屏幕
-- `Ctrl+l`清屏（同`clear`命令）
-- `Ctrl+s`暂停屏幕输出
-- `Ctrl+q`恢复`Ctrl+s`后的屏幕输出
-
-## 命令行光标
-- `Ctrl+A`/`Home`移动光标到行首
-- `Ctrl+E`/`End`移动光标到行尾
-- `Ctrl+B`/`左箭头&lt;-`向左移动一个字符
-- `Ctrl+F`/`右箭头-&gt;`向右移动一个字符
-- `Ctrl+左箭头&lt;-`/`Alt+b`/`ESC-b`向左移动一个单词（以空格分隔)
-- `Ctrl+右箭头-&gt;`/`Alt+c`/`ESC-f`向右移动一个单词（以空格分隔)
-&gt; `Alt+c`向右移动一个单词时会将单词首字母变大写
-
-## 搜索历史
-- `上箭头`/`下箭头`上箭头搜索上一条历史，下箭头相反
-- `Ctrl+p`/`Ctp+n`同上下箭头
-- `Ctrl+r`搜索匹配的历史关键字
-- `Ctrl+s`反向搜索
-- `Ctrl+g`取消反向搜索
-
-## 命令行删除文本
-- `Ctrl+d`/`Delete` 删除光标所在的字符
-- `Ctrl+k` 删除光标到行尾的的文本
-- `Ctrl+x-Backspace` 删除光标到行首的文本
-
-## 命令行修改文本
-- `Ctrl+t` 光标处字符和前一个字符交换位置
-- `ESC+t`与光标前一各单词交换位置（以空格分隔）
-- `ESC+u` 将光标所在处单词字符到词尾转大写
-- `ESC+l` 将光标所在单词字符到词尾写
-- `Esc+c` 将光标所在单词字符转大写，单词光标后字符到词尾转小写
-
-## 控制进程
-- `Ctrl+z` 挂起当前进程
-- `Ctrl+c` 结束当前进程
-- `Ctrl+d` 退出Bash（同`exit`命令）
-
-## Bang(!)命令
-- `!!` 执行上一条命令
-- `!top` 执行最近以top开头的命令
-- `!top:p` 只显示但不执行最近以top开头的命令
-- `!$` 将上个命令中最后一个单词作为新命令执行（同`Alt+.`但要回车执行)
-- `!$:p` 显示`!$`要执行的命令
-- `!*` 执行上个命令中首单词除外的命令
-- `!*:p` 显示`!*`要执行的命令
-
-## 更多命令
-查看帮助手册
-```sh
-$ man bash
-```
-
-</pre>
-</div>
 <div created="20200225062638134" modified="20200225062701333" tags="tmux" title="Tmux">
 <pre>tmux 是一个优秀的终端复用器类自由软件，功能类似 GNU Screen，但使用 BSD 许可发布。用户可以通过 tmux 在一个终端内管理多个分离的会话，窗口及面板，对于同时使用多个命令行，或多个任务时非常方便。
 
@@ -27777,6 +27750,37 @@ mybatis对于集合返回，做了null处理，不会返回null。对service可�
 ```
 
 代码中%3C和%3E分别代表&lt;和&gt;，并通过unescape()函数解码还原。</pre>
+</div>
+<div created="20200323012739826" creator="maojun" modified="20200323013036422" modifier="maojun" tags="container" title="容器">
+<pre>容器是linux下的一些普通进程附带了一些配置信息。
+
+
+安装完docker后，运行一个''redis''服务
+
+```bash
+$ docker run -d --name=db redis:alpine
+```
+
+通过以上命令，docker
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
 </div>
 <div created="20200302130704024" modified="20200302130721172" tags="java" title="对java的看法">
 <pre>## 重要特性
