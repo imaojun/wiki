@@ -485,6 +485,8 @@ Error message and password prompt
 
 <li>docker搭建看板</li>
 
+<li>Draft of 'bluetoothctl命令行连接airpods' by maojun</li>
+
 <li>Draft of 'New Tiddler 1' by maojun</li>
 
 <li>Draft of 'New Tiddler'</li>
@@ -10715,7 +10717,7 @@ Error message and password prompt
 <div created="20200308002508667" creator="m" modified="20200308002602321" modifier="maojun." title="$:/status/UserName">
 <pre>maojun</pre>
 </div>
-<div list="ss 复制配置文件生成多个eureka实例不要使用devtools ribbon配置随机规则可能会出现的问题 bluetoothctl命令行连接airpods [[java.sql.SQLException: Incorrect string value: '\xE5\xBC\xA0\xE4\xB8\x89']] mybatis-plus名称不一致时属性映射 mysql5.6设置编码支持中文 java开发中的value可以省略 docker安装mysql5.6 springboot配置数据源 springboot依赖 springmvc拦截器级别 springboot默认配置属性 springmvc三大配置项 javascript地址栏取参数 oracle查看表信息和备注 servlet设置编码 Git命令 git重新关联远程仓库 容器 curl Bash下的emacs快捷键 bash配置 Bash历史记录的快捷操作方式 [[Draft of 'New Tiddler 1' by maojun]] web开发安全问题 不安全的http方法解决办法 springboot流程总结 oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" title="$:/StoryList">
+<div list="ss 复制配置文件生成多个eureka实例不要使用devtools ribbon配置随机规则可能会出现的问题 [[Draft of 'bluetoothctl命令行连接airpods' by maojun]] [[java.sql.SQLException: Incorrect string value: '\xE5\xBC\xA0\xE4\xB8\x89']] mybatis-plus名称不一致时属性映射 mysql5.6设置编码支持中文 java开发中的value可以省略 docker安装mysql5.6 springboot配置数据源 springboot依赖 springmvc拦截器级别 springboot默认配置属性 springmvc三大配置项 javascript地址栏取参数 oracle查看表信息和备注 servlet设置编码 Git命令 git重新关联远程仓库 容器 curl Bash下的emacs快捷键 bash配置 Bash历史记录的快捷操作方式 [[Draft of 'New Tiddler 1' by maojun]] web开发安全问题 不安全的http方法解决办法 springboot流程总结 oracle查询包含中文内容的字段 oracle根据用户的姓或首字母脱敏 rsync参数说明 rsync同步 jedis设置密码连接访问 [[java报错Jedis does not support password protected Redis Cluster configurations]] redis查看key中文乱码 [[java报错java.lang.NumberFormatException: For input string: &quot;7003@17003&quot;]] Centos安装7z解压缩 redis查看命中 redis问答 $:/Import 成员变量用this调用 [[fcitx linux版本更新]] [[layui form阻止自动跳转]] archlinux降级软件包 html的script标签不要自闭合 layui使用 springboot打包成jar用java运行报错 json转化为map redis集群下keys命令查询某一类业务相关的key 查询redis中占用大内存的键 查询redis指定键的数量 pacman下载超时 离线安装AUR包 java开发工具 java问题总结 redis查询key的数量 服务器配置密钥登入 redis根据key前缀统计内存占用 redis连接远程redis linux根据进程id(pid)查询进程运行目录 java学习 docker搭建看板 maven安装本地jar ava实现Base64加解密 Centos安装Dubbo和控制台 Centos安装常用软件" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11535,8 +11537,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200224100944355" modified="20200224140637377" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200224101732428" creator="maojun" modified="20200326111153979" modifier="maojun" title="$:/temp/search">
-<pre>k38</pre>
+<div created="20200224101732428" creator="maojun" modified="20200328065511144" modifier="maojun" title="$:/temp/search">
+<pre>airpod</pre>
 </div>
 <div created="20200224101338584" modified="20200224101338584" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -14072,6 +14074,100 @@ docker run -d --restart=always --name wekan --link &quot;wekan-db:db&quot; -e &q
 ```
 
 Now Wekan is available at http://ip-address:port , for examp</pre>
+</div>
+<div created="20200304062300568" creator="maojun" draft.of="bluetoothctl命令行连接airpods" draft.title="bluetoothctl命令行连接airpods" modified="20200328155505226" modifier="maojun" tags="linux bluetoothctl airpods" title="Draft of 'bluetoothctl命令行连接airpods' by maojun">
+<pre>bluetoothct依赖下面的包
+```sh
+$ sudo pacman -S bluez bluez-utils pulseaudio-bluetooth  
+```
+&gt; 缺少bluez时查看日志会有错误`Failure when starting bluetooth.service`
+
+&gt;- bluez软件包提供蓝牙协议栈
+&gt; - bluez-utils软件包提供bluetoothctl工具
+&gt; - pulseaudio-bluetooth则为bluez提供了PulseAudio音频服务,若没有安装则蓝牙设备在配对完成后,连接会失败
+
+## 查看状态
+```
+[bluetooth]# show
+Controller 10:10:10:10:10:10 (public)
+        Name: maojun-pc
+        Alias: maojun-pc
+        Class: 0x000c010c
+        Powered: yes
+        Discoverable: yes
+        Pairable: yes
+        UUID: A/V Remote Control        (0000110e-0000-1000-8000-00805f9b34fb)
+        UUID: Audio Source              (0000110a-0000-1000-8000-00805f9b34fb)
+        UUID: PnP Information           (00001200-0000-1000-8000-00805f9b34fb)
+        UUID: Headset AG                (00001112-0000-1000-8000-00805f9b34fb)
+        UUID: Headset                   (00001108-0000-1000-8000-00805f9b34fb)
+        UUID: A/V Remote Control Target (0000110c-0000-1000-8000-00805f9b34fb)
+        UUID: Generic Access Profile    (00001800-0000-1000-8000-00805f9b34fb)
+        UUID: Generic Attribute Profile (00001801-0000-1000-8000-00805f9b34fb)
+        UUID: Audio Sink                (0000110b-0000-1000-8000-00805f9b34fb)
+        Modalias: usb:v1D6Bp0246d0532
+        Discovering: no
+iidssdkfjk
+```
+
+操作过程记录
+```sh
+[bluetooth]# pairable on 
+Changing pairable on succeeded
+[CHG] Device 74:9E:AF:BB:1E:78 RSSI: -49
+[CHG] Device 74:9E:AF:BB:1E:78 RSSI: -35
+[bluetooth]# pair 74:9E:AF:BB:1E:78
+Attempting to pair with 74:9E:AF:BB:1E:78
+[bluetooth]# connect 74:9E:AF:BB:1E:78
+Attempting to connect to 74:9E:AF:BB:1E:78
+[CHG] Device 74:9E:AF:BB:1E:78 Connected: yes
+Connection successful
+[CHG] Device 74:9E:AF:BB:1E:78 ServicesResolved: yes
+
+```
+## 连接airpods步骤：
+1. 开启power,pairable。
+2. 在airpods长按到白色指示等跳动（不然后面配对日志会报`connect error: Permission denied (13)`)
+3. pair mac地址
+4. connect mac地址
+&gt; 连接过之后可以通过`f`快速连接设备
+
+## bluetooth启动步骤
+```
+bluetoothctl
+power on
+agent KeyboardOnly
+default-agent
+pairable on
+scan on  地址  （这个看下，可能有问题）
+trust  地址
+connect  地址
+exit
+```
+
+
+k38地址：34:88:5D:A3:EC:B3
+k38快速连接地址：`echo &quot;connect 34:88:5D:A3:EC:B3&quot; | bluetoothctl`
+## 查看日志
+```
+systemctl status bluetooth
+joddurnalctl -n 20
+```
+
+
+## 调整声音
+我用`amixer`调整蓝牙耳机的声音时发现并不起作用。
+原来`amixer`可以调节`ALSA`,但蓝牙耳机使用的是`Pulseaudio`，所以就不起作用了。
+```
+# 查询名称
+pacmd list-sinks | grep name:
+#替换花括号{}中的名称
+pactl set-sink-volume {name_of_bluetooth_speaker} +10%
+```
+例子：
+```
+pactl set-sink-volume bluez_sink.74_9E_AF_BB_1E_78.a2dp_sink -10%
+```</pre>
 </div>
 <div created="20200322085710840" creator="maojun" draft.of="New Tiddler 1" draft.title="servlet" modified="20200322085743702" modifier="maojun" tags="servlet" title="Draft of 'New Tiddler 1' by maojun">
 <pre>servlet是server applet的缩写。</pre>
